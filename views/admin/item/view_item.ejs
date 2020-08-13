@@ -1,25 +1,29 @@
-<%- include('parts/header.ejs') %>
+<%- include('../../parts/header.ejs') %>
 
 <!-- Page Wrapper -->
 <div id="wrapper">
-  <%- include('parts/sidebar.ejs') %>
+  <%- include('../../parts/sidebar.ejs') %>
 
   <!-- Content Wrapper -->
   <div id="content-wrapper" class="d-flex flex-column">
     <!-- Main Content -->
     <div id="content">
-      <%- include('parts/navbar.ejs') %>
+      <%- include('../../parts/navbar.ejs') %>
 
       <!-- Begin Page Content -->
       <div class="container-fluid">
         <!-- Page Heading -->
-        <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>
+        <h1 class="h3 mb-4 text-gray-800">Welcome To Item</h1>
+        <!-- ENd Heading -->
+
+        <%- include('table_item.ejs')  %> 
+        
       </div>
       <!-- /.container-fluid -->
     </div>
     <!-- End of Main Content -->
 
-    <%- include('parts/footer.ejs') %>
+    <%- include('../../parts/footer.ejs') %>
   </div>
   <!-- End of Content Wrapper -->
 </div>
@@ -65,4 +69,4 @@
   </div>
 </div>
 
-<%- include('parts/js.ejs') %>
+<%- include('../../parts/js.ejs') %>
