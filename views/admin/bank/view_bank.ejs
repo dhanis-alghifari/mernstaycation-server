@@ -12,12 +12,12 @@
 
       <!-- Begin Page Content -->
       <div class="container-fluid">
+        <%- include('../../parts/message.ejs') %>
         <!-- Page Heading -->
         <h1 class="h3 mb-4 text-gray-800">Welcome To Bank</h1>
         <!-- ENd Heading -->
 
-        <%- include('table_bank.ejs')  %> 
-        
+        <%- include('table_bank.ejs') %>
       </div>
       <!-- /.container-fluid -->
     </div>
@@ -69,4 +69,20 @@
   </div>
 </div>
 
+<%- include('add_modal.ejs') %> 
+<%- include('edit_modal.ejs') %> 
 <%- include('../../parts/js.ejs') %>
+
+<script>
+  $("#dataTable").on("click", ".button-update", function () {
+    let id = $(this).data('id');
+    let name = $(this).data('name');
+    let nameBank = $(this).data('namebank');
+    let accountNumber = $(this).data('accountnumber');
+    $("#edit-modal").modal("show");
+    $(".id").val(id);
+    $(".name").val(name);
+    $(".nameBank").val(nameBank);
+    $(".accountNumber").val(accountNumber);
+  })
+</script>
