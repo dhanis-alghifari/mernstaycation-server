@@ -36,24 +36,24 @@ const itemSchema = new mongoose.Schema({
   },
   categoryId: {
     type: ObjectId,
-    ref: "Category",
+    ref: 'Category',
   },
   imageId: [
     {
       type: ObjectId,
-      ref: "Image",
+      ref: 'Image',
     },
   ],
   featureId: [
     {
       type: ObjectId,
-      ref: "Feature",
+      ref: 'Feature',
     },
   ],
   activityId: [
     {
       type: ObjectId,
-      ref: "Activity",
+      ref: 'Activity',
     },
   ],
 });

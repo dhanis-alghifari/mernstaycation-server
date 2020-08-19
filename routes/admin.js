@@ -1,7 +1,7 @@
 var express = require("express");
 const router = express.Router();
 const adminController = require("../controllers/adminController");
-const { upload } = require("../middleware/multer");
+const { uploadSingle, uploadMultiple } = require("../middleware/multer");
 
 /* GET admin page. */
 router.get("/dashboard", adminController.viewDashboard);
@@ -16,8 +16,16 @@ router.put("/category", adminController.editCategory);
 router.delete("/category/:id", adminController.deleteCategory);
 
 /* Endpoint CRUD Bank admin page. */
-router.post("/bank", upload, adminController.addBank);
-router.put("/bank", upload, adminController.editBank);
+router.post("/bank", uploadSingle, adminController.addBank);
+router.put("/bank", uploadSingle, adminController.editBank);
 router.delete("/bank/:id", adminController.deleteBank);
+
+/* Endpoint CRUD Item admin page. */
+router.post("/item", uploadMultiple, adminController.addItem);
+router.get("/item/show-image/:id", adminController.showImageItem);
+router.get("/item/:id", adminController.showEditItem);
+router.put("/item/:id", uploadMultiple, adminController.editItem);
+router.delete("/item/:id/delete", adminController.deleteItem);
+
 
 module.exports = router;
