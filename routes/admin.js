@@ -12,22 +12,21 @@ router.get('/logout', adminController.actionLogout);
 
 /* GET admin page. */
 router.get("/dashboard", adminController.viewDashboard);
-router.get("/category", adminController.viewCategory);
-router.get("/bank", adminController.viewBank);
-router.get("/item", adminController.viewItem);
-router.get("/booking", adminController.viewBooking);
 
 /* Endpoint CRUD Category admin page. */
+router.get("/category", adminController.viewCategory);
 router.post("/category", adminController.addCategory);
 router.put("/category", adminController.editCategory);
 router.delete("/category/:id", adminController.deleteCategory);
 
 /* Endpoint CRUD Bank admin page. */
+router.get("/bank", adminController.viewBank);
 router.post("/bank", uploadSingle, adminController.addBank);
 router.put("/bank", uploadSingle, adminController.editBank);
 router.delete("/bank/:id", adminController.deleteBank);
 
 /* Endpoint CRUD Item admin page. */
+router.get("/item", adminController.viewItem);
 router.post("/item", uploadMultiple, adminController.addItem);
 router.get("/item/show-image/:id", adminController.showImageItem);
 router.get("/item/:id", adminController.showEditItem);
@@ -45,7 +44,10 @@ router.post("/item/add/activity", uploadSingle, adminController.addActivity);
 router.put('/item/update/activity', uploadSingle, adminController.editActivity);
 router.delete('/item/:itemId/activity/:id', adminController.deleteActivity);
 
-
-
+/* Endpoint Booking admin page. */
+router.get("/booking", adminController.viewBooking);
+router.get("/booking/:id", adminController.showDetailBooking);
+router.put('/booking/:id/confirmation', adminController.actionConfirmation);
+router.put('/booking/:id/reject', adminController.actionReject);
 
 module.exports = router;
