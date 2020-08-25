@@ -6,7 +6,6 @@ var logger = require("morgan");
 const methodOverride = require("method-override");
 const session = require('express-session');
 const flash = require('connect-flash');
-const port = process.env.PORT || '3000'
 // import mongoose
 const mongoose = require("mongoose");
 mongoose.connect("mongodb+srv://mernstaycation:131212@cluster0.efwo8.mongodb.net/db_staycationmern?retryWrites=true&w=majority", {
@@ -23,7 +22,6 @@ const adminRouter = require("./routes/admin");
 // router API
 const apiRouter = require("./routes/api");
 var app = express();
-app.set("port", PORT);
 
 
 // view engine setup
